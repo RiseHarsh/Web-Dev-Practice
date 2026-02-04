@@ -15,16 +15,16 @@ body{
     margin: 20px;
 }
 
-.red{
+.btn1{
     background-color: #f99b45;
 }
-.green{
+.btn2{
     background-color: #d95980;
 }
-.yellow{
+.btn3{
     background-color: #819ff9;
 }
-.blue{
+.btn4{
     background-color: #63aac0;
 }
 .flash{

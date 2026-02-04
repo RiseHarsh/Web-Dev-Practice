@@ -26,13 +26,12 @@ function levelUp() {
   userSeq = [];
   level++;
   head.innerText = `Level ${level}`;
-  
-  // Randomly pick a color and push it to game sequence
+
   let randNum = Math.floor(Math.random() * btnColors.length);
   let randColor = btnColors[randNum];
   let randBtn = document.querySelector(`#${randColor}`);
   gameSeq.push(randColor);
-  
+
   console.log(gameSeq);
   btnFlash(randBtn);
 }
@@ -41,7 +40,7 @@ let allbtns = document.querySelectorAll(".btn");
 
 function userClick() {
   let clickedBtn = this;
-  let userCol = clickedBtn.getAttribute("id"); // Fix the btn issue
+  let userCol = clickedBtn.getAttribute("id"); 
   userSeq.push(userCol);
   console.log(userSeq);
   checkAns(userSeq.length - 1);
@@ -49,7 +48,6 @@ function userClick() {
 
 function checkAns(idx) {
   if (userSeq[idx] === gameSeq[idx]) {
-    // If correct, move to the next level after 1 second
     if (userSeq.length === gameSeq.length) {
       setTimeout(levelUp, 1000);
     }
@@ -72,4 +70,14 @@ function reset() {
   userSeq = [];
   gameSeq = [];
   level = 0;
+}
+
+function highestScore() {
+  let highScore = 0;
+  if (level > highScore) {
+    highScore = level;
+  }
+  return highScore;
+  // let hs = document.querySelector("h2");
+  // hs.innerText = `Highest Score: ${highScore}`;
 }
